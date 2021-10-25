@@ -9,15 +9,13 @@ import numpy as np
 import glob
  
 img_array = []
-for filename in glob.glob('D:/U/sexto/mec vi cando/animation/*.png'):
+#*png is used to select all the PNGs inside the directory.
+for filename in glob.glob('Folder containing the images/*.png'):
     
     img = cv2.imread(filename)
     height, width, layers= img.shape
-    r_img = cv2.resize(img,(int(width/4), int(height/4)))
-    height, width, layers = r_img.shape
     size = (width,height)
-
-    img_array.append(r_img)
+    img_array.append(img)
  
     #change 4 for the times you want the 4 links to make a complete spin.
 img_array= 4*img_array
